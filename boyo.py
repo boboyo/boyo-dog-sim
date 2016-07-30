@@ -1,3 +1,5 @@
+
+# -*- coding: UTF-8 -*-
 __author__ = 'boboyo'
 location="Awakening"
 game=True
@@ -43,5 +45,51 @@ while game:
 		print "  2. Activate Trap Card"
 		print "  3. \"i dont play pokemon u fuckin nerd\""
 		choice=raw_input()
-
-
+		if choice=="1":
+			print "SHADOW JESUS wants to fight!"
+			print "SHADOW JESUS sent out PIDGEOT!"
+			print "Go! GYARADOS!"
+			print "FIGHT   BAG"
+			print "POKéMON RUN"
+			choice=raw_input()
+			if choice.lower()=="bag":
+				print "HP/PP RESTORE"
+				print "POKé BALLS"
+				print "STATUS HEALERS"
+				print "BATTLE ITEMS"
+				choice=raw_input()
+				if choice.lower()=="hp/pp restore" or choice=="1":
+					pass
+				if choice.lower()=="poké balls" or choice=="2":
+					balls = {"Poké":1,"Luxury":128,"Timer":187,"Dusk":45,"Master":1,"Cherish":1}
+					descriptions = {
+						"poké ball" : "A device for catching wild Pokémon.\n It is thrown like a ball at the target.\n It is designed as a capsule system.",
+						"cherish ball" : "A quite rare Poké Ball that has been \nspecially crafted to commemorate \nan occasion of some sort.",
+						"master ball" : "The best Ball with the ultimate level of \nperformance. It will catch any wild \nPokémon without fail.",
+						"dusk ball" : "A somewhat different Poké Ball that \nmakes it easier to catch wild pokemon \nat night or in dark places like caves.",
+						"timer ball" : "A somewhat different Ball that \nbecomes progressively better the \nmore turns there are in a battle.",
+						"luxury ball" : "A comfortable Poké Ball that makes a \ncaught wild Pokémon quickly grow \nfriendly."
+					}
+					for ball, amount in balls.iteritems():
+						print ball,"Ball"
+						print "    x"+str(amount)
+					choice = raw_input().lower()
+					if choice in descriptions:
+						cap = lambda x:x[0].upper()+x[1:]
+						print ' '.join(map(cap,choice.split(" ")))+'       x'+str(balls[cap(choice.split(" ")[0])])
+						print descriptions[choice]
+						ptiny "USE"
+						raw_input()
+			if choice.lower()=="fight":
+				print "HYPER BEAM"
+				print "TRASH"
+				print "EARTHQUAKE"
+				print "SPLASH"
+				choice=raw_input()
+		if choice=="2":
+			print "Shadow Jesus doesn't have the time to play a stupid card game with you and leaves with your Nutter Butters"
+			location=start
+		if choice=="3":
+			print "This upsets Shadow Jesus greatly!"
+			print "Shadow Jesus: YOU HAVE BEEN SENTENCED TO THE SHADOW ZONE"
+			location="Shadow Zone"
